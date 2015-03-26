@@ -2,28 +2,29 @@ PythonToScala
 =============
 ![PyToScala](https://farm4.staticflickr.com/3865/14938431420_58b1ffaaa9.jpg)
 
-The goal of this project is to be a concise guide for those transitioning from Python to Scala. This is by *no means* meant to be a complete guide to Scala, but rather some (hopefully) helpful snippets of code to help you translate between the two languages.
+O objetivo desse e-book é ser um guia sucinto para transição de Python para Scala. Isso de modo algum pretende ser um guia completo de Scala, mas tem "pedaços" de código para ajudar a transição entre as duas linguagens.
 
-This guide loosely follows along with the text of [Scala for the Impatient](http://www.horstmann.com/scala/index.html), a great introductory book for those learning Scala. You might find it helpful to read it alongside the chapters from this repo.
+Esse guia segue vagamente o texto [Scala for the Impatient](http://www.horstmann.com/scala/index.html), um excelente livro introdutório para aqueles que querem aprender Scala. Você pode ler esse texto junto com outros capítulos desse e-book.
 
-Note that in general, you should not try to directly translate idioms from one language to another; you don't want to write Scala that looks like Python- you want to write Scala that looks like Scala! You should strive to write idiomatic code whenever possible. A good starting point is Twitter's [Effective Scala](http://twitter.github.io/effectivescala/)
+Observe que em geral, você não deve tentar uma traduzir diretamente expressões de uma linguagem para outra; você não quer escrever código em Scala como se escreve em Python - você quer escrever código em Scala como se escreve em Scala! Você deve esforçar-se para escrever código idiomático sempre que possível. Um bom ponto de início é o exemplo do Twitter [Effective Scala](http://twitter.github.io/effectivescala/)
 
-I recommend reading through the guide in the following order:
+Eu recomendo ler esse guia completamente seguindo essa ordem:
 
-1. Variables and Arithmetic
-2. Conditionals
-3. Functions
+1. Variáveis e Aritmética
+2. Condicionais
+3. Funções
 4. Strings
-5. Sequences
+5. Sequencias
 6. Maps
 7. Tuples
 8. Exceptions
 9. Classes
 
-Here are some Scala topics not discussed above that I think are important to review:
-* **Pattern Matching** This is like a switch statement on turbo, and is very powerful and oft used. The [Scala Cookbook](http://shop.oreilly.com/product/0636920026914.do) has really great practical examples.
-* **Auxiliary Constructors** Classes can have multiple constructors that operate on different argument types/number of args.
-* **Case Classes** as an immutable, record-like data-structure that can be pattern-matched.
-* **Scala Collections** There is a lot of power in all of the methods available to data structures like Vector, Array, List, Sequence, Set, etc. Just take a [look](http://www.scala-lang.org/api/current/index.html#scala.collection.Seq) at all of the available methods.
+Aqui estão alguns tópicos em Scala não discutidos acima e que eu acho importante para revisar:
 
-This can also be read as a [GitBook](http://wrobstory.gitbooks.io/python-to-scala/), which offers pdf/ebook downloads and a nice web format for reading.
+* **Pattern Matching** Isso é como um turbo, é muito poderoso e frequentemente usado. O [Scala Cookbook](http://shop.oreilly.com/product/0636920026914.do) tem realmente bons exemplos práticos.
+* **Auxiliary Constructors** Classes podem ter vários construtores que operam em diferentes tipos e números de argumentos;
+* **Case Classes** como *immutable*, *record-like* e estrutura de dados podem ser *pattern-matched*.
+* **Scala Collections** Existe muito poder em todos os métodos disponíveis em estruturas de dados como Vetores, Arrays, Listas, Sequencias, Set, etc. [Basta olhar](http://www.scala-lang.org/api/current/index.html#scala.collection.Seq) para ver os métodos disponíveis.
+
+Esse conteúdo também pode ser lido no [GitBook](http://wrobstory.gitbooks.io/python-to-scala/) que oferece versões em pdf/e-book para download e um formato web.
