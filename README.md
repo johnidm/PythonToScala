@@ -28,4 +28,4 @@ Here are some Scala topics not discussed above that I think are important to rev
 
 This can also be read as a [GitBook](http://wrobstory.gitbooks.io/python-to-scala/), which offers pdf/ebook downloads and a nice web format for reading.
 
-Translated into Portuguese (Brazilian) by [Johni Douglas](http://www.johnidouglas.com.br/)
+Translated into Portuguese (Brazilian) by [Johni Douglas](http://www.johnidouglas.com.br/).
