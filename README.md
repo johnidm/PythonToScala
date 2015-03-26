@@ -27,3 +27,5 @@ Here are some Scala topics not discussed above that I think are important to rev
 * **Scala Collections** There is a lot of power in all of the methods available to data structures like Vector, Array, List, Sequence, Set, etc. Just take a [look](http://www.scala-lang.org/api/current/index.html#scala.collection.Seq) at all of the available methods.
 
 This can also be read as a [GitBook](http://wrobstory.gitbooks.io/python-to-scala/), which offers pdf/ebook downloads and a nice web format for reading.
+
+Translated into Portuguese (Brazilian) by [Johni Douglas](http://www.johnidouglas.com.br/)
