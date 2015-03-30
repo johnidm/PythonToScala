@@ -1,7 +1,7 @@
-Variables
+Variáveis
 ---------
 
-This is going to be a very quick review, as there shouldn't be much surprising with the way Scala handles values (immutable) and variables (mutable):
+Esse vai ser um resumo rápido, não deve ser novidade a forma com o Scala manipula valores (imutáveis) e variáveis (mutáveis):
 
 ##### Python:
 ```python
@@ -20,18 +20,15 @@ foo: String = Apples
 scala> val baz = foo + " and Oranges."
 baz: String = Apples and Oranges.
 
-
 scala> baz
 res60: String = Apples and Oranges.
 
-
-// In Scala, vals are immutable
+// Em escala, *vals* são imitáveis
 scala> baz = "Only Grapes."
 <console>:13: error: reassignment to val
        baz = "Only Grapes."
 
-
-// Create a var instead
+// Criando uma variável 
 scala> var baz = "Apples and Oranges."
 baz: String = Apples and Oranges.
 
@@ -47,7 +44,7 @@ scala> one
 res21: Int = 2
 ```
 
-Scala will also allow you to more strongly type your variables, rather than letting the compiler interpret the type:
+Scala também permite variáveis fortemente tipadas, ao invés de deixar o compilador interpretar o seu tipo.
 
 ##### Scala
 
@@ -56,7 +53,7 @@ scala> val foo: String = "Apples"
 foo: String = Apples
 ```
 
-Python and Scala will both let you perform multiple assignment. However, be careful with Python and pass by reference! You'll usually want to unpack rather than perform multiple assignment.
+Python e Scala permitem a atribuição múltipla de valores. Contudo, você deve ser cuidadoso com Python ao passar por referência! Você geralmente vai querer desempacotar atribuições múltiplas.
 
 ##### Scala:
 ```scala
@@ -64,7 +61,7 @@ scala> val foo, bar = Array(1, 2, 3)
 foo: Array[Int] = Array(1, 2, 3)
 bar: Array[Int] = Array(1, 2, 3)
 
-// foo and bar reference different pieces of memory; changing one will not change the other.
+// *foo* and *bar* fazem referência a posições de memória; mudando uma variável a outra não será alterada.
 scala> bar(0) = 4
 
 scala> bar
@@ -74,21 +71,23 @@ scala> foo
 res71: Array[Int] = Array(1, 2, 3)
 ```
 
-The same can be achieved with Python unpacking:
+O mesmo pode ser feito com Python desempacotando:
+
 ```python
 >>> foo, bar = [1, 2, 3], [1, 2, 3]
-# Are they referencing the same memory?
+
+# Eles estão fazendo referência a mesma posição na memória?
 >>> foo is bar
 False
-# What happens when you change bar?
+
+O que acontece quando você muda *bar*?
 >>> bar[0] = 4
 >>> bar
 [4, 2, 3]
 >>> foo
 [1, 2, 3]
 
-
-# You *can* assign both foo and bar the same value, but they reference the same memory!
+# Você *pode* atribuir tanto *foo* r *bar* com o mesmo valor, mas eles fazem referência a mesma posição de memória!
 >>> foo = bar = [1, 2, 3]
 >>> foo is bar
 True
@@ -99,12 +98,13 @@ True
 [4, 2, 3]
 ```
 
-Scala and Python largely share arithmetic operations. Behind the scenes, they are both using methods to implement the operaters- Scala uses the actual operator symbol, rather than an alphanumeric character:
+Scala e Python compartilham a maior parte dos operadores aritméticos. Nos bastidores, ambos usam métodos para implementar os operadores - Scala usa o símbolo atual do operador, em vez de um caractere alfanumérico
 
 ##### Python
 ```python
 >>> foo = 1
-# What's happening behind the scenes?
+
+# O que está acontecendo nos bastidores?
 >>> foo.__add__(4)
 5
 ```
@@ -116,7 +116,8 @@ foo: Int = 1
 
 scala> foo + 1
 res72: Int = 2
-// What's happening behind the scenes:
+
+// O que está acontecendo nos bastidores:
 scala> foo.+(1)
 res73: Int = 2
 ```
