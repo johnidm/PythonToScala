@@ -53,7 +53,7 @@ scala> val foo: String = "Apples"
 foo: String = Apples
 ```
 
-Python e Scala permitem a atribuição múltipla de valores. Contudo, você deve ser cuidadoso com Python ao passar por referência! Você geralmente vai querer desempacotar atribuições múltiplas.
+Python e Scala permitem atribuição múltipla de valores. Contudo, você deve ser cuidadoso com Python ao passar por referência! Você geralmente vai querer desempacotar atribuições múltiplas.
 
 ##### Scala:
 ```scala
