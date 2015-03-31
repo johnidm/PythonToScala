@@ -1,7 +1,7 @@
-Conditional Expressions
+Expressões Condicionais
 -----------------------
 
-Scala's if/else/else-if will look very familiar to those who have written in C-style languages before:
+Em Scala são `if/else/else-if`, isso é muito familiar para quem escreve no estilo da linguagem C.
 
 ##### Python
 ```python
@@ -31,25 +31,28 @@ Foo is string
 scala> val x = 0
 x: Int = 0
 
-// Inline: variable assignment expression
+// Inline: Expressão atribuida a variável
 scala> val foo = if (x > 0) 1 else -1
 foo: Int = -1
 
 scala> var baz = 1
 baz: Int = 1
 
-// REPL paste mode
+// Modo paste - REPL http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop
 scala> :paste
-// Entering paste mode (ctrl-D to finish)
-// Kernighan & Ritchie brace style preferred for multi-line expressions
+
+// Etre com o modo paste (ctrl-D to finish)
+// Kernighan & Ritchie preferem o suporte ao estilo de expressões em várias linhas
 if (x == 0) {
   baz = 5
 }
-// Exiting paste mode, now interpreting.
+
+// Saindo do modo *paste*, agoram interpretando.
 
 scala> baz
 res90: Int = 5
-// But for simple expressions, try to keep them to one line
+
+// Mas para expressões simples, tente mandtes eles em uma linha
 scala> if (x == 0) baz = 6
 
 scala> baz
@@ -68,7 +71,7 @@ if (foo.isInstanceOf[String]) {
 Foo is a string!
 ```
 
-While loops should look familiar as well:
+Enquanto loops devem ser familiares, como isso:
 
 ##### Python
 ```python
