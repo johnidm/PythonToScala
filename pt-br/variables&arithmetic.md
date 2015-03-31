@@ -23,7 +23,7 @@ baz: String = Apples and Oranges.
 scala> baz
 res60: String = Apples and Oranges.
 
-// Em escala, *vals* são imitáveis
+// Em escala, *vals* são imutáveis
 scala> baz = "Only Grapes."
 <console>:13: error: reassignment to val
        baz = "Only Grapes."
