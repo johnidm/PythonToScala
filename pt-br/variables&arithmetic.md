@@ -61,7 +61,7 @@ scala> val foo, bar = Array(1, 2, 3)
 foo: Array[Int] = Array(1, 2, 3)
 bar: Array[Int] = Array(1, 2, 3)
 
-// *foo* and *bar* fazem referência a posições de memória; mudando uma variável a outra não será alterada.
+// *foo* and *bar* não fazem referência a mesma posição de memória.
 scala> bar(0) = 4
 
 scala> bar
