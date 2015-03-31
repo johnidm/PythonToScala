@@ -104,7 +104,7 @@ Scala e Python compartilham a maior parte dos operadores aritméticos. Nos basti
 ```python
 >>> foo = 1
 
-# O que está acontecendo nos bastidores?
+# O que está acontecendo nos bastidores:
 >>> foo.__add__(4)
 5
 ```
