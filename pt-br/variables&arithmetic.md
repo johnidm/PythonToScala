@@ -87,7 +87,7 @@ O que acontece quando você muda *bar*?
 >>> foo
 [1, 2, 3]
 
-# Você *pode* atribuir tanto *foo* r *bar* com o mesmo valor, mas eles fazem referência a mesma posição de memória!
+# Você *pode* atribuir tanto a *foo* com a  *bar* o mesmo valor, mas eles fazem referência a mesma posição de memória!
 >>> foo = bar = [1, 2, 3]
 >>> foo is bar
 True
