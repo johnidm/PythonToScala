@@ -84,13 +84,13 @@ while n < 5:
 [0, 1, 2, 3, 4]
 ```
 
-The following can actually be handled much better with a comprehension and a more functional approach, discussed below:
+O seguir podemos realmente tratar como uma compreenção e uma bordagem mais fucional, discutida a seguir:
 
 ##### Scala
 ```scala
 n: Int = 0
 
-// ArrayBuffer is a mutable array that acts like Python lists.
+// ArrayBuffer é um array mutável que age como lista em Python.  
 scala> import scala.collection.mutable.ArrayBuffer
 import scala.collection.mutable.ArrayBuffer
 
@@ -109,7 +109,7 @@ res115: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(0, 1, 2, 3, 4)
 }
 ```
 
-For-loops and comprehensions, the latter of which is likely sorely missed by Python programmers writing Java. Scala supports a `for (variable <- expression)` syntax. Let's look at Python first:
+Para loops e compressões, o último é provavél que seja disperdiçada por programadres Python escrevendo Java. Scala suporta uma sintaxe `for (variable <- expression)`. Vamos ver primeiro em Python:
 
 ##### Python
 ```python
@@ -135,7 +135,7 @@ for (x <- foo) {
 scala> n
 res140: n: Int = 5
 
-// This would actually be better expressed in a single line
+// Isso podera ser melhor expressado em uma linha.
 scala> n = 0
 
 scala> for (x <- foo) n += 1
@@ -144,7 +144,8 @@ scala> n
 res141: n: Int = 5
 ```
 
-Python comprehensions are a very important part of writing idiomatic Python; Scala supports the same with the yield syntax:
+Compressões em Python são partes muito importantes de escrita indiomatica em Python; Scala suporta o mesmo com a sintaxe `yeld`:
+
 
 ##### Python
 ```python
@@ -158,7 +159,7 @@ scala> for (f <- Array(1, 2, 3, 4, 5)) yield f + 1
 res59: Array[Int] = Array(2, 3, 4, 5, 6)
 ```
 
-Python has a very useful function called `zip` that will allow you to iterate over iterables at the same time. Scala will allow you to have multiple "generators" in an expression, which can replicate the zip behavior:
+Python tem uma função muito útil chamada `zip` que permite iterar sobre *iterables* ao mesmo tempo. Scala permite a você ter multiplos "generators" em uma expressão, que pode ser replicado para um comportamente `zip`.
 
 ##### Python
 ```python
@@ -180,14 +181,15 @@ val foo = Array(1, 2, 3)
 val bar = Array("a", "b", "c")
 
 import scala.collection.mutable.Map
-// Let's go ahead and specify the types, since we know them
+
+// Vamos na frente especificar o tipo, desde que os conhecemos 
 var foobars= Map[String, Int]()
 
 for (f <- foo; b <- bar) foobars += (b -> f)
 scala> foobars
 res5: scala.collection.mutable.Map[String,Int] = Map(b -> 3, a -> 3, c -> 3)
 
-// This is really powerful- we're not limited to two iterables
+// Isso é realmente poderoso - nós estamos  limitados a dois *iterables*
 val baz = Array("apple", "orange", "banana")
 val mapped = Map[String, (Int, String)]()
 for (f <- foo; b <- bar; z <- baz) mapped += (z -> (f, b))
@@ -195,6 +197,7 @@ scala> mapped
 res7: scala.collection.mutable.Map[String,(Int, String)] = Map(banana -> (3,c), orange -> (3,c), apple -> (3,c))
 
 // It's worth noting that Scala also has an explicit zip method
+// É interssante notar que Scala também tem um metodo `zip` explixito
 val arr1 = Array(1, 2, 3)
 val arr2 = Array(4, 5, 6)
 
@@ -202,7 +205,7 @@ scala> arr1.zip(arr2)
 res240: Array[(Int, Int)] = Array((1,4), (2,5), (3,6))
 ```
 
-Python's enumerate is a really nice language feature, and is mirrored by Scala's `zipWithIndex`:
+O `enumerate` do Python é um recurso muito intereessante, e é semelhante ao  `zipWithIndex` do Scala:
 
 ##### Python
 ```python
@@ -215,12 +218,12 @@ Python's enumerate is a really nice language feature, and is mirrored by Scala's
 scala> for ((y, x) <- Array("foo", "bar", "baz").zipWithIndex) yield (x, y)
 res27: Array[(Int, String)] = Array((0,foo), (1,bar), (2,baz))
 
-// Note that simply calling zipWithIndex will return something similar (but with values // in reverse order)
+// Observe que simplismente chamando zipWithIndex o retornao é algo parecido, mas com valoresem ordem inversa.
 scala> Array("foo", "bar", "baz").zipWithIndex
 res31: Array[(String, Int)] = Array((foo,0), (bar,1), (baz,2))
 ```
 
-Scala will allow "guard" expressions, which is the same as a control flow expression in Python:
+Scala permite expressoes "guard", que são a mesmo que expressôes de controle de fluxo em Python:
 
 ##### Python
 ```python
@@ -238,12 +241,12 @@ for (f <- foo if f != 3) bar += f
 scala> bar
 res136: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(1, 2)
 
-// You can stack guards
+// Você pode empilhar guards
 scala> for (x <- (1 to 5).toArray if x != 2 if x != 3) yield x
 res44: Array[Int] = Array(1, 4, 5)
 ```
 
-Note that in many cases, it may be more concise to use `map` vs a for-comprehension:
+Observe que em muitos casos, isso pode ser muito sucinto, para usar `map` versus `for-comprehension`:
 
 ##### Scala
 ```scala
