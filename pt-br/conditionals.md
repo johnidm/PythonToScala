@@ -1,16 +1,16 @@
 Expressões Condicionais
 -----------------------
 
-Em Scala são `if/else/else-if`, isso é muito familiar para quem escreve no estilo da linguagem C.
+Em Scala são representados por `if/else/else-if`, isso é muito familiar para quem escreve no estilo da linguagem C.
 
 ##### Python
 ```python
 >>> x = 0
-# Inline: expression_if_true if condition else expression_if_false
+# Inline: expressão_se_verdadeiro if condição else expressão_se_falso
 >>> foo = 1 if x > 0 else -1
 >>> foo
 -1
-# Expressions broken across multiple lines
+# Expressões quebradas em múltiplas linhas
 if x == 1:
     foo = 5
 elif x == 0:
@@ -31,28 +31,28 @@ Foo is string
 scala> val x = 0
 x: Int = 0
 
-// Inline: Expressão atribuida a variável
+// Inline: Expressão atribuída a variável
 scala> val foo = if (x > 0) 1 else -1
 foo: Int = -1
 
 scala> var baz = 1
 baz: Int = 1
 
-// Modo paste - REPL http://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop
+// Modo paste 
 scala> :paste
 
-// Etre com o modo paste (ctrl-D to finish)
+// Entering paste mode (ctrl-D to finish)
 // Kernighan & Ritchie preferem o suporte ao estilo de expressões em várias linhas
 if (x == 0) {
   baz = 5
 }
 
-// Saindo do modo *paste*, agoram interpretando.
+// Exiting paste mode, now interpreting.
 
 scala> baz
 res90: Int = 5
 
-// Mas para expressões simples, tente mandtes eles em uma linha
+// Mas para expressões simples, tente mantê-las em uma linha
 scala> if (x == 0) baz = 6
 
 scala> baz
@@ -71,7 +71,7 @@ if (foo.isInstanceOf[String]) {
 Foo is a string!
 ```
 
-Enquanto loops devem ser familiares, como isso:
+*Loops* devem ser familiares, veja:
 
 ##### Python
 ```python
@@ -84,11 +84,11 @@ while n < 5:
 [0, 1, 2, 3, 4]
 ```
 
-O seguir podemos realmente tratar como uma compreenção e uma bordagem mais fucional, discutida a seguir:
+A seguir podemos tratar como uma *comprehension*, que é uma abordagem mais funcional:
 
 ##### Scala
 ```scala
-n: Int = 0
+var n: Int = 0
 
 // ArrayBuffer é um array mutável que age como lista em Python.  
 scala> import scala.collection.mutable.ArrayBuffer
@@ -109,7 +109,7 @@ res115: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(0, 1, 2, 3, 4)
 }
 ```
 
-Para loops e compressões, o último é provavél que seja disperdiçada por programadres Python escrevendo Java. Scala suporta uma sintaxe `for (variable <- expression)`. Vamos ver primeiro em Python:
+Para *loops* e *comprehension*, o último é provável que seja desperdiçado por programadores Python e Java. Scala suporta uma sintaxe `for (variable <- expression)`. Vamos ver primeiro em Python:
 
 ##### Python
 ```python
@@ -135,7 +135,7 @@ for (x <- foo) {
 scala> n
 res140: n: Int = 5
 
-// Isso podera ser melhor expressado em uma linha.
+// Isso poderá ser melhor expressado em uma linha.
 scala> n = 0
 
 scala> for (x <- foo) n += 1
@@ -144,7 +144,7 @@ scala> n
 res141: n: Int = 5
 ```
 
-Compressões em Python são partes muito importantes de escrita indiomatica em Python; Scala suporta o mesmo com a sintaxe `yeld`:
+*Comprehension* em Python são partes muito importantes de escrita idiomática do Python; Scala suporta o mesmo com a sintaxe `yeld`:
 
 
 ##### Python
@@ -159,7 +159,7 @@ scala> for (f <- Array(1, 2, 3, 4, 5)) yield f + 1
 res59: Array[Int] = Array(2, 3, 4, 5, 6)
 ```
 
-Python tem uma função muito útil chamada `zip` que permite iterar sobre *iterables* ao mesmo tempo. Scala permite a você ter multiplos "generators" em uma expressão, que pode ser replicado para um comportamente `zip`.
+Python tem uma função muito útil chamada `zip` que permite iterar sobre *iterables* ao mesmo tempo. Scala permite a você ter múltiplos "generators" em uma expressão, que pode ser replicada para um comportamento `zip`.
 
 ##### Python
 ```python
@@ -170,7 +170,7 @@ for f, b in zip(foo, bar):
 >>> foobars
 {'a': 1, 'c': 3, 'b': 2}
 
-# It's more Pythonic to use a comprehension
+# E mais Pythonic usando *comprehension*
 >>> {b: f for f, b in zip(foo, bar)}
 {'a': 1, 'c': 3, 'b': 2}
 ```
@@ -182,22 +182,21 @@ val bar = Array("a", "b", "c")
 
 import scala.collection.mutable.Map
 
-// Vamos na frente especificar o tipo, desde que os conhecemos 
+// Vamos especificar o tipo, desde que os conhecemos 
 var foobars= Map[String, Int]()
 
 for (f <- foo; b <- bar) foobars += (b -> f)
 scala> foobars
 res5: scala.collection.mutable.Map[String,Int] = Map(b -> 3, a -> 3, c -> 3)
 
-// Isso é realmente poderoso - nós estamos  limitados a dois *iterables*
+// Isso é realmente poderoso - nós não estamos limitados a dois iterables
 val baz = Array("apple", "orange", "banana")
 val mapped = Map[String, (Int, String)]()
 for (f <- foo; b <- bar; z <- baz) mapped += (z -> (f, b))
 scala> mapped
 res7: scala.collection.mutable.Map[String,(Int, String)] = Map(banana -> (3,c), orange -> (3,c), apple -> (3,c))
 
-// It's worth noting that Scala also has an explicit zip method
-// É interssante notar que Scala também tem um metodo `zip` explixito
+// É interessante notar que Scala também tem um método `zip` explicito
 val arr1 = Array(1, 2, 3)
 val arr2 = Array(4, 5, 6)
 
@@ -205,7 +204,7 @@ scala> arr1.zip(arr2)
 res240: Array[(Int, Int)] = Array((1,4), (2,5), (3,6))
 ```
 
-O `enumerate` do Python é um recurso muito intereessante, e é semelhante ao  `zipWithIndex` do Scala:
+O `enumerate` do Python é um recurso muito interessante, é semelhante ao `zipWithIndex` do Scala:
 
 ##### Python
 ```python
@@ -218,12 +217,12 @@ O `enumerate` do Python é um recurso muito intereessante, e é semelhante ao  `
 scala> for ((y, x) <- Array("foo", "bar", "baz").zipWithIndex) yield (x, y)
 res27: Array[(Int, String)] = Array((0,foo), (1,bar), (2,baz))
 
-// Observe que simplismente chamando zipWithIndex o retornao é algo parecido, mas com valoresem ordem inversa.
+// Observe que simplesmente chamando zipWithIndex o retornado é algo parecido, mas com valores em ordem inversa.
 scala> Array("foo", "bar", "baz").zipWithIndex
 res31: Array[(String, Int)] = Array((foo,0), (bar,1), (baz,2))
 ```
 
-Scala permite expressoes "guard", que são a mesmo que expressôes de controle de fluxo em Python:
+Scala permite expressões "guard", que é o mesmo que expressões de controle de fluxo em Python:
 
 ##### Python
 ```python
@@ -239,7 +238,7 @@ val foo = Array(1, 2, 3, 4, 5)
 var bar = ArrayBuffer[Int]()
 for (f <- foo if f != 3) bar += f
 scala> bar
-res136: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(1, 2)
+res136: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(1, 2, 4, 5)
 
 // Você pode empilhar guards
 scala> for (x <- (1 to 5).toArray if x != 2 if x != 3) yield x
