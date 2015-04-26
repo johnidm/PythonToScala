@@ -1,9 +1,9 @@
 Funções
 ---------
 
-Desmentindo: na seguinte seção eu uso "function" par se refereir ambas funções em Scala (definidas com  `=>`) e metodos Scala (definido com `def`) um pouco imutavel (interchangeably ).
+Aviso: na seguinte seção eu uso "funções" par se refereir a funções em Scala, definidas com  `=>`, e métodos em Scala, definido com `def`.
 
-Méthodos/funções em Scala são muito familiares para programadores Python, exceto pelo fato de você ter que especificar o tipo do parãmetro que está sendo passado na função:
+Métodos e funções em Scala são muito familiares para programadores Python, exceto pelo fato de você ter que especificar o tipo do parãmetro que está sendo passado na função ou método:
 
 ##### Python
 ```python
@@ -15,8 +15,7 @@ def concat_num_str(x, y):
 '1string'
 ```
 
-First, note that Scala will simply return the result of the method block, unless a return is explicitly noted:
-Primeiro, observe que Scala simplismente retornar o resultado de um bloco no método, a menos que o retorno é explicito, obsrve:
+Primeiro, observe que em Scala ira simplismente retornar o resultado do bloco no método, a menos que o retorno é explicito:
 
 ##### Scala:
 ```scala
@@ -24,7 +23,7 @@ def concat_num_str(x:Int, y:String) = x.toString + y
 scala> concat_num_str(1, "string")
 res146: String = 1string
 
-// What happens if we try to pass the incorrect type?
+// O que acontce ser tentarmos passar um tipo incorreto?
 scala> concat_num_str("string", num)
 <console>:19: error: type mismatch;
  found   : String("string")
@@ -35,8 +34,7 @@ scala> concat_num_str("string", num)
               concat_num_str("string", num)
 ```
 
-If using multiple expressions, use a bracketed block:
-Se usar multiplas ezpressoes, use um bloc entre colchetes:
+Se usar multiplas ezexpressões, use o bloco entre colchetes:
 
 ##### Scala:
 ```scala
@@ -53,8 +51,7 @@ scala> len_to_map(str_arr)
 res149: scala.collection.mutable.Map[String,Int] = Map(orange -> 6, apple -> 5, grape -> 5)
 ```
 
-With Scala, you can specify a return type, and *have* to do so in recursive funcs:
-Com Scala, vocè pode especificar um tipo de retorno, e *ter* que fazer funções recursivas:
+Em Scala, você pode especificar o tipo de retorno, e fazer funções recursivas:
 
 ##### Scala:
 ```scala
@@ -62,7 +59,7 @@ def factorial(n: Int): Int = if (n <= 0) 1 else n * factorial(n - 1)
 scala> factorial(5)
 res152: Int = 120
 
-// It's nice to specify the return type as a matter of habit
+// Isso é interessante para especificar o tipo de retorno como um bom hábito
 scala> def spec_type(x: Int, y:Double): Int = x + y.toInt
 spec_type: (x: Int, y: Double)Int
 
@@ -70,8 +67,7 @@ scala> spec_type(1, 3.4)
 res33: Int = 4
 ```
 
-Default and named arguments should be very familiar for Python users:
-Padrões e chamadas de argumentos devem ser muito familiares para desenvovledores Python:
+Padrões e argumentos nomeados são muito familiares para desenvovledores Python:
 
 ##### Python
 ```python
@@ -105,8 +101,6 @@ Unspecified value parameter y.
               make_arr("orange", drink="coffee", "banana")
 ```
 
-Scala supports variable arguments in a similar way to Python's *args, but with a little less flexibility- Scala just knows that its being given a sequence of arguments that it can operate on.
-
 Scala suporta argumentos variavéis de maneira similar ao *args do Python, mas um pouco menos flexivél - Scala apenas sabe que isso é uma sequencia de arqumentos que podem ser interados.
 
 ##### Python:
@@ -125,9 +119,7 @@ scala> sum_args(1, 2, 3, 4, 5)
 res159: Int = 15
 ```
 
-As with Python, you can't just pass in a sequence- it needs to be deconstructed first:
-
-Tal como Python, você não pode passa uma sequencia - isso precisa ser descontruido primeiro:
+Tal como ocorre em Python, você não pode passar uma lista - isso precisa ser descontruido primeiro:
 
 ##### Python:
 ```
@@ -153,9 +145,7 @@ scala> sum_args(Array(1, 2, 3): _*)
 res161: Int = 6
 ```
 
-I should note here that Scala does have a special "Procedure" type function that returns no value, wherein the `=` sign is omitted:
-
-Eu observei que que Scala não tem um tipo especial de função conhecido como "Procedure" que não retorna valores, em que o sinal `=` é omitido.
+Observe que Scala tem um tipo especial de função conhecida como "Procedure" que não retorna valor, nesse caso o sinal `=` é omitido.
 
 ##### Scala:
 ```scala
@@ -163,8 +153,7 @@ def proc_func(x:String, y:String) {print(x + y)}
 proc_func("x", "y")
 ```
 
-Scala supports anonymous functions the same way that Python's `lamda` functions work:
-Scala suporta funções anonimas o mesmo forma que funções `lamda` trabalham em Python:
+Scala suporta funções anônimas da mesma forma que funções `lamda` em Python:
 
 ##### Python:
 ```python
@@ -182,8 +171,7 @@ scala> concat_fruit("apple", "orange")
 res4: String = appleorange
 ```
 
-Functions are first-class citizens in Scala, as with Python, so you can pass a function to another higher-order function:
-Funções de primeira-classe em Scala, como em Python, podem passar um função de alta-ordem:
+Funções de primeira-classe em Scala, como em Python, podem passar uma função para outra função de de ordem-superior:
 
 ##### Python:
 ```python
@@ -201,7 +189,7 @@ applyToArgs: (func: (String, String) => String, arg1: String, arg2: String)Strin
 scala> applyToArgs(concat_fruit, "apple", "banana")
 res9: String = applebanana
 
-// You can apply anonymous functions as well
+// Você pode aplicar funções anonimas também 
 scala> def applySingleArgFunc(func: (Int) => Int, arg1: Int): Int = func(arg1)
 applySingleArgFunc: (func: Int => Int, arg1: Int)Int
 
@@ -209,8 +197,7 @@ scala> applySingleArgFunc((x: Int) => x + 5, 1)
 res11: Int = 6
 ```
 
-Scala makes currying easy. This is a pattern you don't see used a whole lot in Python, but it is easy to implement:
-Scala criar facillemnte curringas. Esse é um padrão que voce nao usa muito em Python, mas isso é facil de implementar: 
+Scala faz facilmente currying. Esse é um padrão que você não se usa muito em Python, mas isso é facil de implementar: 
 
 ##### Python:
 ```python
