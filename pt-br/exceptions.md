@@ -1,7 +1,8 @@
-Exceptions
+Exceções 
 ----------
 
 Exceptions are relatively straightforward in Scala, as they are in Python:
+Exceções são relativamente simles em Scala, como elas são em Python:
 
 ##### Python:
 ```python
@@ -29,6 +30,7 @@ java.lang.IllegalArgumentException: Fruit is not apple!
 ```
 
 Scala also has a try/catch/finally that behaves similarly to Python's try/except/finally:
+Scala também tem um try/catch/finally que tem comportamente semelhante ao try/except/finally do Python:
 
 ##### Python:
 ```python
