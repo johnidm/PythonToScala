@@ -1,15 +1,9 @@
 Sequencias
 ---------
 
-Scala has a very large number of sequence types built-in to choose from. This includes List (linked-lists), Vectors (immutable arrays), Arrays (mutable arrays of fixed length), and ArrayBuffers(mutable arrays of varying length).
-
 Scala tem um numero muito grande de tipos *sequence* internos para escolher. Isso inclui List (linked-lists), Arrays (arrays imutavéis), Vetores (arrays mutaveis com tamanho fixo), e ArrayBuffers (arrays mutavies com tamanho variável).
 
-Naturally, you should choose the data structure that best suits your needs. I am going to briefly cover Vectors, Arrays, and ArrayBuffers here (the latter of which most closely resembles a Python list).
-
 Naturalmente você deve escolher a estrutura de dados que melhor se adapta ao seu problema. Nos vamos ver brevemente Vetores, Arrays e ArrayBuffers. Esse último se assemelhar a listas em Python.
-
-Vector is the best default immutable sequence in Scala. Here is a crash course of the number of things you can do with a Scala Sequence, including some of the fun functional bits:
 
 Vetor é a melhor sequencia imutavel em Scala. Abaixo você podem ver uma sequencia de operações que voce pode fazer com sequencias em Scala, incluido um pouco de programação funcional.
 
