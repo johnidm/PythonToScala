@@ -86,14 +86,11 @@ O que acontece quando você muda *bar*?
 [4, 2, 3]
 >>> foo
 [1, 2, 3]
-
 ```
 
-Caso não fizermos o desempacotando a mesma posição de memória é utilizada:
-
 ```
-
-# Você pode atribuir tanto a foo como a *bar* o mesmo valor, mas eles fazem referência a mesma posição de memória.
+# Você pode atribuir tanto a foo como a *bar* o mesmo valor,
+# mas eles fazem referência a mesma posição de memória.
 >>> foo = bar = [1, 2, 3]
 >>> foo is bar
 True
