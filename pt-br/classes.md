@@ -1,9 +1,9 @@
 Classes
 -------
 
-Criar classe em Scala é mais simples que o Java, mas ainda com a mesma meandros adicionados que voce não irá normalemente ver quando contrio classe em Python. Eu recomendo altamente ler um pouco como classes em Scala trabalham, como eleas são relacionadas ao Java e quais os detalhes que vale a penas conhecer.
+Criar classe em Scala é mais simples que o Java, mas com a mesma complexidade que você cria classes em Python. Eu recomendo ler como classes em Scala trabalham, como eleas estão relacionadas ao Java e quais os detalhes que vale apena conhecer.
 
-Entretanto eu vou mostrar algumas classes simples que sçao comparadas entre as duas, e  deixar isso para ler com futuramente:
+Entretanto eu vou mostrar algumas classes simples que são comparadas entre as duas linguagens, e deixar essas leitura com opção futura.
 
 ##### Python
 ```python
@@ -52,7 +52,7 @@ ValueError: Automobile cannot have fewer than 0 wheels!
 The automobile now has 4 wheels!
 ```
 
-Em Scala , use var para criar todos os atributos mutaveis. Internamente, Scala criar getters e setters para cada:
+Em Scala, use `var` para criar os atributos mutáveis. Internamente, Scala criar getters e setters para cada uma.
 
 ##### Scala
 ```scala
@@ -98,7 +98,7 @@ scala> car.remove_wheels(2)
 Auto now has 4 wheels!
 ```
 
-Em Scala, se você definir um contrutor com um campo `val` (imutavél), voce tem disponivel um getter mas não um setter. Isso semelhante a você definir suas proprias propriedade getter/setter em classe Python (para um grande resumo dePripriedade e descritores Python confira [Python Descriptors Demystified](http://nbviewer.ipython.org/gist/ChrisBeaumont/5758381/descriptor_writeup.ipynb)):
+Em Scala, se você definir um contrutor com um campo `val` (imutavél), voce terá a disposição um getter mas não um setter. Isso é semelhante a você definir suas proprias propriedade getter/setter em classes Python (para um grande resumo de propriedades e descritores em Python confira [Python Descriptors Demystified](http://nbviewer.ipython.org/gist/ChrisBeaumont/5758381/descriptor_writeup.ipynb)):
 
 ##### Python
 ```python
@@ -149,7 +149,7 @@ scala> car.wheels = 5
                   ^
 ```
 
-Como em Java, Scala também permite você definir campos como `private`, que impede getter/setter de ser gerados e  somente permite acesso ao compo dentro da classe. Esse comportamento pode ser replicado em Python, mas você não ira frequentementever esse padrão ser usado em programaas Python - isso é entendido que os atributos de classe principal com underscore são privados e não devem ser devem usados:
+Como em Java, Scala também permite você definir campos como `private`, que impede getter/setter de ser gerados e somente permite acesso dentro da classe. Esse comportamento pode ser replicado em Python, mas você não ira ver esse padrão ser usado com frequencia por programadores Python. Em Python os atributos de classe principal com underscore são privados e não devem ser devem usados:
 
 ##### Python
 ```python
@@ -210,7 +210,7 @@ scala> car.wheels = 5
 val $ires4 = car.wheels
 ```
 
-Métodos staticos em Scala são manipulados atrapes de "companion objects" das classes, que são nomeados com a mesma classe. Objetos são uma entrada de strudo da linguagem Scala - Eu estou mostrando como eles se relacionamd com `staticmethod`em Python, mas eu recomendo que voce faça o mesmo com os objetos usados em Scala. Tambem demostrado nesse exemplo é como os cmapos do objetos podem ser usados para espelhar atributos em nível de classe no Python:
+Métodos staticos em Scala são manipulados atraves de "companion objects" das classes, que são nomeados com a mesma classe. Objetos são uma forma de estudo da linguagem Scala. Eu estou mostrando como eles se relacionam com o `staticmethod` do Python, mas eu recomendo que voce faça o mesmo com os objetos usados em Scala. Tambem demostrado nesse exemplo é como as propreidades dos objetos podem ser usados para espelhar atributos em nível de classe no Python.
 
 
 ##### Python
@@ -260,7 +260,7 @@ scala> Automobile.wheels
 res5: Int = 5
 ```
 
-A seguinte seção mostra como pode ser feito herança em Scala e Python. Eu recomentod leri mais sobreambas as linguagens em relação *abstract base classes* e  *traits* (Scala) e  Method Resolution Order (Python). Pora hora, veremos o básico.
+A seguinte seção mostra como pode ser feito herança em Scala e Python. Eu recomento ler mais sobre ambas as linguagens em relação *abstract base classes* e  *traits* (Scala) e Method Resolution Order (Python). Pora hora, veremos o básico.
 
 Scala suporta herança única via classe base abstrata, que são nomeadas explicitamente como tal. Python pode tratar qualquer classe como abstrata:
 
@@ -351,7 +351,7 @@ scala> class Car(color:String, make:String) extends Automobile(color, make) with
        class Car(color:String, make:String) extends Automobile(color, make) with SportPackage(){}
 ```
 
-Geralmente, você deve apenas usar abstract base classes em Scala se você precusa de interoperabildiade em Java ou precisar passar parametros em contrutores na classe base. Caso contrário, você precisar usar oque Scala chama de "Traits", que agem como mixins e permitem herança multipla em Scala.
+Geralmente, você deve apenas usar *abstract base classes* em Scala se você precusa de interoperabildiade em Java ou precisar passar parametros em contrutores na classe base. Caso contrário, você deve usar oque Scala chama de "Traits", que agem como mixins e permitem herança multipla em Scala.
 
 ##### Python
 ```python
