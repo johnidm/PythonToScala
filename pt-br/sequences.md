@@ -1,11 +1,11 @@
 Sequencias
 ---------
 
-Scala tem um numero muito grande de tipos *sequence* internos para escolher. Isso inclui List (linked-lists), Arrays (arrays imutavéis), Vetores (arrays mutaveis com tamanho fixo), e ArrayBuffers (arrays mutavies com tamanho variável).
+Scala tem um número muito grande de estruturas sequencias para escolher. Isso inclui List (linked-lists), Arrays (arrays imutavéis), Vetores (arrays mutaveis com tamanho fixo), e ArrayBuffers (arrays mutavies com tamanho variável).
 
-Naturalmente você deve escolher a estrutura de dados que melhor se adapta ao seu problema. Nos vamos ver brevemente Vetores, Arrays e ArrayBuffers. Esse último se assemelhar a listas em Python.
+Naturalmente você deve escolher a estrutura de dados que melhor se adapta ao seu problema. Nos vamos ver brevemente Vetores, Arrays e ArrayBuffers. Esse último se assemelha a listas em Python.
 
-Vetor é a melhor sequencia imutavel em Scala. Abaixo você podem ver uma sequencia de operações que voce pode fazer com sequencias em Scala, incluido um pouco de programação funcional.
+Vetor é a melhor sequencia imutavel em Scala. Abaixo você podem ver uma sequencia de operações que pode se feita em Scala, incluido um pouco de programação funcional.
 
 ##### Scala:
 ```scala
@@ -60,7 +60,7 @@ res15: Int = 6
 scala> Vector(Vector(1, 2, 3), Vector(4, 5, 6)).flatten
 res28: scala.collection.immutable.Vector[Int] = Vector(1, 2, 3, 4, 5, 6)
 
-// Another way to go about the previous operation
+// Outra maneira de fazer a operação anterio
 scala> Vector.concat(Vector(1, 2, 3), Vector(4, 5, 6))
 res16: scala.collection.immutable.Vector[Int] = Vector(1, 2, 3, 4, 5, 6)
 
@@ -71,8 +71,7 @@ scala> Vector(1, 2, 3).diff(Vector(3, 4, 5))
 res8: scala.collection.immutable.Vector[Int] = Vector(1, 2)
 ```
 
-The Array is a fixed length, so the concept of initializing it to values exists:
-O Array tem um tamanho fixo, assim o conceio de inicialização de valores existe:
+O Array tem um tamanho fixo, assim é possível fazer a inicialização dos valores.
 
 ##### Python:
 ```python
@@ -100,9 +99,7 @@ scala> Array.fill(3)(10)
 res22: Array[Int] = Array(10, 10, 10)
 ```
 
-ArrayBuffer is the go-to mutable sequence, and they work more like Python lists:
-ArrayBuffer é uma sequencia mutavel, e eles são funcinal de forma semelhante a listas em Python:
-
+ArrayBuffer é uma sequencia mutavel, e funcional de forma semelhante as listas em Python.
 
 ##### Python:
 ```python
@@ -197,7 +194,7 @@ scala> int_arr
 res29: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer()
 ```
 
-Though we already covered for-statements and sequence traversal, its worth noting Scala's `until` operator that works a lot like Python's range:
+Embora já conversamos sobre estruturas de loops, em Scala existe o operador `until` que funciona como o range em Python.
 
 ##### Python:
 ```python
@@ -225,7 +222,7 @@ scala> 0 until (10, 2)
 res23: scala.collection.immutable.Range = Range(0, 2, 4, 6, 8)
 ```
 
- A quick review of the comprehension syntax again, including the "guard" clause:
+Veja uma breve revisão da sintaxe de *comprehension*.
 
 ##### Python:
 ```python
@@ -239,17 +236,17 @@ foo = [x + "qux" for x in ["foo", "bar", "baz"] if x != "foo"]
 scala> val foo = for (x <- Vector("foo", "bar", "baz") if x != "foo") yield x + "qux"
 foo: scala.collection.immutable.Vector[String] = Vector(barqux, bazqux)
 
-// Note that the comprehension returns the type that is fed to it
+// Observe que a comprehension retorna o tipo que é elimentado 
 scala> val foo = for (x <- ArrayBuffer("foo", "bar", "baz") if x != "foo") yield x + "qux"
 foo: scala.collection.mutable.ArrayBuffer[String] = ArrayBuffer(barqux, bazqux)
 
-// Note that we could use a more functional approach to operate over the sequences here as well
+// Observe que podemos usar operações funcionais nas sequencias 
 scala> Vector("foo", "bar", "baz").filter(_ != "foo").map(_ + "qux")
 res25: scala.collection.immutable.Vector[String] = Vector(barqux, bazqux)
 
 ```
 
-A quick note that Scala supports multi-dimensional arrays out of the box, whereas in Python, you are really best off using the NumPy library.
+Uma rapida observação é que Scala suporta arrays multidimensionais, enquanto que em Python a melhor forma de usar e com a biblioteca NumPy.
 
 ##### Scala:
 ```scala
