@@ -102,13 +102,13 @@ True
 [4, 2, 3]
 ```
 
-Scala e Python compartilham a maior parte dos operadores aritméticos. Nos bastidores, ambos usam métodos para implementar os operadores - Scala usa o símbolo atual do operador, em vez de um caractere alfanumérico
+Scala e Python compartilham a maior parte dos operadores aritméticos. Nos bastidores, ambos usam métodos para implementar os operadores. Scala usa o símbolo do operador, em vez de um método.
 
 ##### Python
 ```python
 >>> foo = 1
 
-# O que está acontecendo nos bastidores:
+# O que está acontecendo nos bastidores?
 >>> foo.__add__(4)
 5
 ```
@@ -121,7 +121,7 @@ foo: Int = 1
 scala> foo + 1
 res72: Int = 2
 
-// O que está acontecendo nos bastidores:
+// O que está acontecendo nos bastidores?
 scala> foo.+(1)
 res73: Int = 2
 ```
