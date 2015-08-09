@@ -1,7 +1,7 @@
 Tuplas
 ------
 
-Em Scala, tuplas pode ser tipos mistos, como em Python. Tuplas são também uma boa maneira para desenpacotar vals/vars em Scala, bem como o resultado de muitas operações `zip`: 
+Em Scala, tuplas podem conter vários tipos, como em Python. Elas também são uma boa maneira para desempacotar `vals` e `vars` em Scala, bem como o resultado de muitas operações como o `zip` no Python: 
 
 ##### Python:
 ```python
@@ -44,7 +44,7 @@ c: String = three
 scala> val bar = (4, 5.5, "six")
 bar: (Int, Double, String) = (4,5.5,six)
 
-// Nós vemos a função zip anteriormente - ela produz uma tupla
+// Nós vimos a função zip anteriormente, ela produz uma tupla
 scala> val pairs = Array(1, 2, 3).zip(Array("four", "five", "six"))
 pairs: Array[(Int, String)] = Array((1,four), (2,five), (3,six))
 
