@@ -15,7 +15,7 @@ def concat_num_str(x, y):
 '1string'
 ```
 
-Primeiro, observe que em Scala ira simplismente retornar o resultado do bloco no método, a menos que o retorno é explicito:
+Primeiro, observe que o Scala ira simplismente retornar o resultado do bloco no método, a menos que o retorno é explicito:
 
 ##### Scala:
 ```scala
@@ -34,7 +34,7 @@ scala> concat_num_str("string", num)
               concat_num_str("string", num)
 ```
 
-Se usar multiplas ezexpressões, use o bloco entre colchetes:
+Se usar multiplas expressões, use o bloco entre colchetes:
 
 ##### Scala:
 ```scala
@@ -101,7 +101,7 @@ Unspecified value parameter y.
               make_arr("orange", drink="coffee", "banana")
 ```
 
-Scala suporta argumentos variavéis de maneira similar ao *args do Python, mas um pouco menos flexivél - Scala apenas sabe que isso é uma sequencia de arqumentos que podem ser interados.
+Scala suporta argumentos variavéis de maneira similar ao *args do Python, mas um pouco menos flexivél, Scala apenas sabe que isso é uma sequencia de arqumentos que podem ser interados.
 
 ##### Python:
 ```python
@@ -119,7 +119,7 @@ scala> sum_args(1, 2, 3, 4, 5)
 res159: Int = 15
 ```
 
-Tal como ocorre em Python, você não pode passar uma lista - isso precisa ser descontruido primeiro:
+Tal como ocorre em Python, você não pode passar uma lista, isso precisa ser descontruido primeiro:
 
 ##### Python:
 ```
