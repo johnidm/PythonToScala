@@ -109,7 +109,9 @@ res115: scala.collection.mutable.ArrayBuffer[Int] = ArrayBuffer(0, 1, 2, 3, 4)
 }
 ```
 
-Para *loops* e *comprehension*, o último é provável que seja desperdiçado por programadores Python e Java. Scala suporta uma sintaxe `for (variable <- expression)`. Vamos ver primeiro em Python:
+*Loops* e *comprehension*, o último provávelmente não seja aproveitado por muitos programadores Python.
+
+Scala suporta uma sintaxe `for (variable <- expression)`. Vamos ver primeiro em Python:
 
 ##### Python
 ```python
@@ -135,7 +137,7 @@ for (x <- foo) {
 scala> n
 res140: n: Int = 5
 
-// Isso poderá ser melhor expressado em uma linha.
+// Isso pode ser melhor expressado em uma única linha.
 scala> n = 0
 
 scala> for (x <- foo) n += 1
@@ -144,7 +146,7 @@ scala> n
 res141: n: Int = 5
 ```
 
-*Comprehension* em Python são partes muito importantes de escrita idiomática do Python; Scala suporta o mesmo com a sintaxe `yeld`:
+*Comprehension* em Python é uma parte muito importantes de escrita idiomática do Python, Scala suporta o mesmo com a sintaxe `yeld`:
 
 
 ##### Python
@@ -159,7 +161,7 @@ scala> for (f <- Array(1, 2, 3, 4, 5)) yield f + 1
 res59: Array[Int] = Array(2, 3, 4, 5, 6)
 ```
 
-Python tem uma função muito útil chamada `zip` que permite iterar sobre *iterables* ao mesmo tempo. Scala permite a você ter múltiplos "generators" em uma expressão, que pode ser replicada para um comportamento `zip`.
+Python tem uma função muito útil chamada `zip` que permite iterar sobre mais de uma variável *iterables* ao mesmo tempo. Scala permite a você ter múltiplos "generators" em uma expressão, que pode ser replicada para um comportamento `zip`.
 
 ##### Python
 ```python
