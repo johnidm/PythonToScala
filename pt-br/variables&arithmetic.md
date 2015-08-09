@@ -1,7 +1,7 @@
 Variáveis
 ---------
 
-Esse vai ser um resumo rápido, não deve ser novidade a forma com o Scala manipula valores (imutáveis) e variáveis (mutáveis):
+Esse vai ser um resumo rápido, não deve ser novidade a forma com Scala manipula variáveis mutáveis e imutáveis:
 
 ##### Python:
 ```python
@@ -23,7 +23,7 @@ baz: String = Apples and Oranges.
 scala> baz
 res60: String = Apples and Oranges.
 
-// Em escala, *vals* são imutáveis
+// Em escala, "vals" são imutáveis
 scala> baz = "Only Grapes."
 <console>:13: error: reassignment to val
        baz = "Only Grapes."
@@ -44,7 +44,7 @@ scala> one
 res21: Int = 2
 ```
 
-Scala também permite variáveis fortemente tipadas, ao invés de deixar o compilador interpretar o seu tipo.
+Scala também permite variáveis fortemente tipadas, ao invés de deixar o compilador inferir o seu tipo.
 
 ##### Scala
 
@@ -53,7 +53,7 @@ scala> val foo: String = "Apples"
 foo: String = Apples
 ```
 
-Python e Scala permitem atribuição múltipla de valores. Contudo, você deve ser cuidadoso com Python ao passar por referência! Você geralmente vai querer desempacotar atribuições múltiplas.
+Python e Scala permitem atribuição múltipla de valores. Contudo, você deve ser cuidadoso com Python ao passar valores por referência, geralmente devemos desempacotar as atribuições múltiplas para evitar efeitos indesejados.
 
 ##### Scala:
 ```scala
@@ -87,7 +87,13 @@ O que acontece quando você muda *bar*?
 >>> foo
 [1, 2, 3]
 
-# Você *pode* atribuir tanto a *foo* com a  *bar* o mesmo valor, mas eles fazem referência a mesma posição de memória!
+```
+
+Caso não fizermos o desempacotando a mesma posição de memória é utilizada:
+
+```
+
+# Você pode atribuir tanto a foo como a *bar* o mesmo valor, mas eles fazem referência a mesma posição de memória.
 >>> foo = bar = [1, 2, 3]
 >>> foo is bar
 True
