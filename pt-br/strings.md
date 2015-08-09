@@ -1,8 +1,6 @@
 Strings
 -------
-
-Python and Scala share some syntax regarding String operations, and what differs is straightforward:
-Python e Scala compartilham a mesma sintaxe em relação a operações com String, e o que difere é simples:
+Python e Scala compartilham uma sintaxe semelhante com relação a operações com String, existem poucas diferenças.
 
 ##### Python
 ```python
@@ -53,7 +51,7 @@ scala> foo.map(_.toUpper)
 res18: String = BAR
 ```
 
-Scala 2.10 apresenta uma sintaxe de interpolaão de strings, que é familiar a desenvovledores Coffee Script:
+Scala 2.10 apresenta uma sintaxe muito elegante de interpolaão de strings, que é familiar a desenvovledores Coffee Script.
 
 ##### Scala
 ```scala
@@ -73,7 +71,7 @@ scala> s"I have $apple_count $fruit and $broc_count $veg. In total I have ${appl
 res15: String = I have 5 apple and 10 broccoli. In total I have 15.
 ```
 
-Ambas as linguagens permitem a você facilmente interar sobre caracteres individuais de uma string:
+Ambas as linguagens permitem a você facilmente interar sobre caracteres individuais de uma string.
 
 ##### Python
 ```python
@@ -92,7 +90,7 @@ a
 r
 ```
 
-Multiplas linhas de string em Scala são muito failiares para programadores Python:
+Multiplas linhas de string em Scala são muito failiares para programadores Python.
 
 ##### Python
 ```python
