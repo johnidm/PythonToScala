@@ -1,9 +1,7 @@
 Maps
 ----
 
-Scala has both immutable and mutable map types, whereas Python has the single reliable (and fast!) Dict. Here's a comparison of methods that effectively do the same thing for the two:
-
-SCala tem imutaveis e mutaveis tipos de mapas, ja que Python tem um unico, confiável, e rápido dicionário. Aqui está a comparação de métodos que efetivamente fazer a mesma coisas para os dois:
+Scala tem estruturas de dicionários mutaveis e imutaveis, já que Python tem um único, confiável, e rápido dicionário. Aqui está a comparação de métodos que efetivamente fazem a mesma coisas em ambas as linguagens.
 
 ##### Python:
 ```python
@@ -71,8 +69,7 @@ scala> defaultMap("qux")
 res31: Int = 3
 ```
 
-Scala will let you iterate over maps in a similar way as Python:
-SCala vai deixar você interagir sobre mapas de forma similar ao Python:
+SCala vai deixar você iterar sobre dicionário de forma similar ao Python.
 
 ##### Python
 ```python
@@ -92,9 +89,7 @@ scala> foo
 res237: scala.collection.mutable.ArrayBuffer[String] = ArrayBuffer(bananas6, oranges5)
 ```
 
-A quick note: Scala has a SortedMap class that implements a tree map. The Python equivalent would be the OrderedDict in the collections module:
-
-Uma rápida observação: Scala tem uma classe chamada SortedMap que implementa um mapa de árvore. O Python tem um equivalemente que é o OrderedDict em seus módulos:
+Uma rápida observação: Scala tem uma classe chamada SortedMap que implementa um dicionario de árvore, o Python tem um equivalemente que é o OrderedDict em seus módulos:
 
 ##### Python:
 ```python
@@ -106,7 +101,6 @@ OrderedDict([('apples', 4), ('oranges', 5)])
 
 ##### Scala:
 ```scala
-// PSA this is immutable
 scala> val scores = scala.collection.immutable.SortedMap("oranges" -> 5, "apples" -> 4)
 scores: scala.collection.immutable.SortedMap[String,Int] = Map(apples -> 4, oranges -> 5)
 ```
