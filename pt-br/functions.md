@@ -197,7 +197,7 @@ scala> applySingleArgFunc((x: Int) => x + 5, 1)
 res11: Int = 6
 ```
 
-Scala faz facilmente currying. Esse é um padrão que você não se usa muito em Python, mas isso é facil de implementar: 
+Scala faz facilmente currying. Esse é um padrão que não se usa muito em Python, mas é facil de implementar: 
 
 ##### Python:
 ```python
