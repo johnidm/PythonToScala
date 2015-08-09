@@ -91,6 +91,7 @@ O que acontece quando você muda *bar*?
 ```
 # Você pode atribuir tanto a foo como a *bar* o mesmo valor,
 # mas eles fazem referência a mesma posição de memória.
+
 >>> foo = bar = [1, 2, 3]
 >>> foo is bar
 True
